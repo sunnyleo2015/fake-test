@@ -80,9 +80,9 @@ function addItem(type) {
     renderPage();
 }
 
-function deleteItem(deleteObject) {
+function deleteItem(Number) {
     alert('delete');
-    //var deleteItemNumber = $(deleteObject).parent(div).attr(indexOf);
-    //jsonData.item.splice(deleteItemNumber, 1);
+    jsonData.item.splice(Number, 1);
+    renderPage();
 }
 

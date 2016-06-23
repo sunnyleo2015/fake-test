@@ -27,9 +27,9 @@
             <div class="formWindows">
                 <% _.forEach(item, function(item){ %>
                     <% if(item.type == 'text'){ %>
-                        <div class="textinput"><%- item.type%>:<input type="text"><button type="button" class="delete" onclick="deleteItem(this)">delete</button></div>
+                        <div class="textinput"><%- item.type%>:<input type="text"><button type="button" class="delete" onclick="deleteItem($('.textinput').index(this))">delete</button></div>
                     <% }else if( item.type == 'date'){ %>
-                        <div class="dateinput"><%- item.type%>:<input type="text"><button type="button" class="delete" onclick="deleteItem(this)">delete</button></div>
+                        <div class="textinput"><%- item.type%>:<input type="text"><button type="button" class="delete" onclick="deleteItem($('.textinput').index(this))">delete</button></div>
                     <% } %>
                 <% }) %>
             </div>
