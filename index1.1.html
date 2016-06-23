@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html> 
+<head> 
+<title>2016.06.22 JQuery homework</title>
+<meta charset=utf-8> 
+
+<link rel="stylesheet" type="text/css" href="index.css">
+<script src="jquery.min.js"></script>
+<script src="index1.1.js"></script>
+<script src="node_modules/lodash.js"></script>
+<script type="text/html" id="editPage">
+    <div class="editPage">
+        <div class="editPageTitle">editPage</div>
+        <div class="formWindows">
+            <% _.forEach(jsonData, function(){%>
+            <div class="textinput">text:<input type="text"><button type="button" class="delete" onclick="deleteItemButton('+i+')">delete</button></div>
+            <div class="dateinput">date:<input type="date"><button type="button" class="delete" onclick="deleteItemButton('+i+')">delete</button></div>
+            <%})%>
+        </div>
+        <div class="addItemButton">add</div>
+        <div class="toPreviewPage">finish</div>
+    </div>
+</script>
+<script type="text/html" id="previewPage">
+        <div class="previewPage">
+            <div class="previewPageTitle">previewPage</div>
+            <div class="previewWindos"></div>
+            <div class="toEditPage">back</div>
+        </div>
+</script>
+</head>
+<body> 
+    <div class="content"></div>
+</body> 
+</html> 
+
+
+

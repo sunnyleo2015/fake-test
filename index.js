@@ -1,8 +1,4 @@
-﻿var json = []/*[
-{ "type":"text" , "number":"0" },
-{ "type":"text" , "number":"1" },
-{ "type":"date" , "number":"0" }
-]*/;
+﻿var json = [];
 
 $(function(){
     chooseWindows();
