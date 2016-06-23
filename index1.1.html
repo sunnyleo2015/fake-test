@@ -5,31 +5,56 @@
 
 <link rel="stylesheet" type="text/css" href="index.css">
 <script src="jquery.min.js"></script>
-<script src="index1.1.js"></script>
-<script src="node_modules/lodash.js"></script>
-<script type="text/html" id="editPage">
-    <div class="editPage">
-        <div class="editPageTitle">editPage</div>
-        <div class="formWindows">
-            <% _.forEach(jsonData, function(){%>
-            <div class="textinput">text:<input type="text"><button type="button" class="delete" onclick="deleteItemButton('+i+')">delete</button></div>
-            <div class="dateinput">date:<input type="date"><button type="button" class="delete" onclick="deleteItemButton('+i+')">delete</button></div>
-            <%})%>
-        </div>
-        <div class="addItemButton">add</div>
-        <div class="toPreviewPage">finish</div>
-    </div>
-</script>
-<script type="text/html" id="previewPage">
-        <div class="previewPage">
-            <div class="previewPageTitle">previewPage</div>
-            <div class="previewWindos"></div>
-            <div class="toEditPage">back</div>
-        </div>
-</script>
+<script src="index 1.1.js"></script>
+<script src="node_modules/lodash/lodash.js"></script>
+
 </head>
 <body> 
     <div class="content"></div>
+
+    <div class="chooseWindow">
+        <div class="closeButton">X</div>
+        <form>
+            <span>text:</span><input type="radio" name="inputtype" value="text"><br>
+            <span>date:</span><input type="radio" name="inputtype" value="date">
+            <button type="button" class="addNewItemButton">add item</button>
+        </form>
+    </div>
+
+    <script type="text/html" id="editPage">
+        <div class="editPage">
+            <div class="editPageTitle">editPage</div>
+            <div class="formWindows">
+                <% _.forEach(item, function(item){ %>
+                    <% if(item.type == 'text'){ %>
+                        <div class="textinput"><%- item.type%>:<input type="text"><button type="button" class="delete" onclick="deleteItem(this)">delete</button></div>
+                    <% }else if( item.type == 'date'){ %>
+                        <div class="dateinput"><%- item.type%>:<input type="text"><button type="button" class="delete" onclick="deleteItem(this)">delete</button></div>
+                    <% } %>
+                <% }) %>
+            </div>
+            <div class="addItemButton">add</div>
+            <div class="toPreviewPage">finish</div>
+        </div>
+    </script>
+    <script type="text/html" id="previewPage">
+        <div class="previewPage">
+            <div class="previewPageTitle">previewPage</div>
+            <div class="previewWindos">
+                <% _.forEach(item, function(item){ %>
+                <% if(item.type == 'text'){ %>
+                <div class="previewInput">text:<input type="text" disabled="true"></div>
+                <% }else if(item.type == 'date'){ %>
+                <div class="previewDate">date:<input type="date" disabled="true"></div>
+                <% } %>
+                <% }) %>
+            </div>
+            <div class="toEditPage">back</div>
+        </div>
+    </script>
+    <script type="text/html" id="optionWindows">
+
+    </script>
 </body> 
 </html> 
 

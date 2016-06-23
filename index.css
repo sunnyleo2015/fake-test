@@ -1,4 +1,4 @@
-@CHARSET 'utf8';
+@charset "UTF-8";
 
 *{
   padding: 0;
@@ -90,7 +90,7 @@ body{
   font-size: 20px;
   line-height: 5vh;
   margin: auto;
-  margin-top: : 0.5vh;
+  margin-top: 0.5vh;
 }
 
 .dateinput{
@@ -146,7 +146,7 @@ body{
   font-size: 20px;
   line-height: 5vh;
   margin: auto;
-  margin-top: : 0.5vh;
+  margin-top: 0.5vh;
 }
 
 .previewDate{
