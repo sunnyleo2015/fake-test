@@ -81,7 +81,7 @@ function addItem(type) {
 }
 
 function deleteItem(Number) {
-    alert('delete');
+    alert('delete');    
     jsonData.item.splice(Number, 1);
     renderPage();
 }
